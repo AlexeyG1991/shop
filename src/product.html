@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html', {
+"title":"Карточка товара"
+})
+
+<body>
+   <div class="wrapper">
+      @@include('html/header.html', {})
+      <main class="page page_inner">
+         <div class="page__header">
+            <div class="__container">
+               <nav class="breadcrumbs">
+                  <ul class="breadcrumbs__list">
+                     <li class="breadcrumbs__item">
+                        <a href="index.html" class="breadcrumbs__link">Головна</a>
+                     </li>
+                     <li class="breadcrumbs__item">
+                        <a href="catalog.html" class="breadcrumbs__link">Саджанці винограду</a>
+                     </li>
+                     <li class="breadcrumbs__item">
+                        <span class="breadcrumbs__current">Аватар</span>
+                     </li>
+                  </ul>
+               </nav>
+            </div>
+         </div>
+         <div class="product">
+            <div class="__container">
+               <div class="product__main main-product">
+                  <div class="main-product__images images-product">
+                     <div class="images-product__slider swiper">
+                        <div class="images-product__swiper swiper-wrapper">
+                           <div class="images-product__slide swiper-slide">
+                              <img src="@img/product/01.jpg" alt="">
+                           </div>
+                           <div class="images-product__slide swiper-slide">
+                              <img src="@img/product/02.jpg" alt="">
+                           </div>
+                           <div class="images-product__slide swiper-slide">
+                              <img src="@img/product/03.jpg" alt="">
+                           </div>
+                           <div class="images-product__slide swiper-slide">
+                              <img src="@img/product/04.jpg" alt="">
+                           </div>
+                           <div class="images-product__slide swiper-slide">
+                              <img src="@img/product/05.jpg" alt="">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="main-product__thumbs images-thumbs">
+                        <div class="images-thumbs__swiper swiper-wrapper">
+                           <div class="images-thumbs__slide swiper-slide">
+                              <img src="@img/product/01.jpg" alt="">
+                           </div>
+                           <div class="images-thumbs__slide swiper-slide">
+                              <img src="@img/product/02.jpg" alt="">
+                           </div>
+                           <div class="images-thumbs__slide swiper-slide">
+                              <img src="@img/product/03.jpg" alt="">
+                           </div>
+                           <div class="images-thumbs__slide swiper-slide">
+                              <img src="@img/product/04.jpg" alt="">
+                           </div>
+                           <div class="images-thumbs__slide swiper-slide">
+                              <img src="@img/product/05.jpg" alt="">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="main-product__body body-product">
+                     <div class="body-product__header header-product">
+                        <div class="header-product__line">
+                           <h1 class="header-product__title">Аватар</h1>
+                           <a href="" class="header-product__link _icon-compare"></a>
+                           <a href="" class="header-product__link _icon-favorite"></a>
+                        </div>
+                        <div class="products-card__rating">
+                           <div class="rating rating_set">
+                              <div class="rating__body">
+                                 <div class="rating__active"></div>
+                                 <div class="rating__items">
+                                    <input type="radio" class="rating__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item" value="5" name="rating">
+                                 </div>
+                              </div>
+                              <div class="rating__value">3.6</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="body-product__table table-product">
+                        <div class="table-product__label">Артикул:</div>
+                        <div class="table-product__value">AF0000001952</div>
+                        <div class="table-product__label">Країна:</div>
+                        <div class="table-product__value">США</div>
+                        <div class="table-product__label">Батьківські сорти:</div>
+                        <div class="table-product__value">С22-121 та Beita Mouni</div>
+                        <div class="table-product__label">Бонусні бали:</div>
+                        <div class="table-product__value">38</div>
+                     </div>
+                     <div class="body-product__options options-product">
+                        <div class="options-product__label">Вік</div>
+                        <div class="select">
+                           <div class="select__header">
+                              <span class="select__current">Вегетуючий</span>
+                           </div>
+                           <div class="select__body">
+                              <div data-value="1" class="select__item">Вегетуючий</div>
+                              <div data-value="2" class="select__item">Однорічний</div>
+                              <div data-value="3" class="select__item">Дворічний</div>
+                              <div data-value="4" class="select__item">Живець</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="body-product__actions actions-product">
+                        <div class="actions-product__row">
+                           <div class="products">
+                              <div class="product" data-price="500">
+                                 <div class="product__totalPrice"><span>500</span> ₴</div>
+                                 <div class="counter">
+                                    <button class="counter__decrement">-</button>
+                                    <div class="counter__count">1</div>
+                                    <button class="counter__increment">+</button>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="actions-product__buttons">
+                              <a href="" class="actions-product__cart button"><span class="_icon-cart">В
+                                    корзину</span></a>
+                              <a href="" class="actions-product__button button button_black">Придбати в 1 клiк</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+      @@include('html/footer.html', {})
+   </div>
+
+   <script src="js/app.min.js"></script>
+</body>
+
+</html>

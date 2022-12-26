@@ -1,0 +1,346 @@
+@use 'sass:math';
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,600,700&display=swap");
+
+@import "fonts";
+@import "icons";
+@import "zeroing-style";
+@import "header";
+@import "main";
+@import "products-slider";
+@import "footer";
+@import "catalog";
+@import "nouislider";
+@import "product";
+
+
+$fontFamily: "Montserrat";
+$fontSize: rem(18);
+$mainColor: #000;
+
+// Налаштування----------------------------------------------
+// Мінімальна ширина сторінки
+$minWidth: 320;
+// Ширина полотна (макета)
+$maxWidth: 1920;
+// Ширина обмежуючого контейнера
+$maxWidthContainer: 1590;
+// Загальний отступ у контейнера (30 = по 15рх з права та ліва, 0 = намає відступу)
+$containerPadding: 30;
+// Тип адаптива: 1 чи 2
+$responsiveType: 1;
+// Ширина спрацьовування першого брекпоінта
+$containerWidth: $maxWidthContainer + $containerPadding;
+// Брек-поінти
+$pc: em($containerWidth);
+$tablet: em(991.98);
+$mobile: em(767.98);
+$mobileSmall: em(479.98);
+
+
+@mixin adaptiveValue ($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    gap: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+body {
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 18px;
+
+    // Скролл заблоковано
+    .lock & {
+        overflow: hidden;
+        touch-action: none;
+    }
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    // Сайт загружений
+    // .loaded & {}
+
+    // Прижимаєм footer
+    >main {
+        flex: 1 1 auto;
+    }
+
+    // Фікс для слайдерів
+    >* {
+        min-width: 0;
+    }
+}
+
+.__container {
+    margin: 0 auto;
+    max-width: 1590px;
+    padding: 0 15px;
+}
+
+.button {
+    display: inline-block;
+    text-align: center;
+    background-color: $mainColorOrang;
+    box-shadow: 0px 4px 20px rgba(232, 170, 49, 0.43);
+    color: #fff !important;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 10px 50px;
+    line-height: math.div(32, 20);
+    transition: box-shadow 0.3s ease 0s;
+    cursor: pointer;
+
+    @media (any-hover: hover) {
+        &:hover {
+            box-shadow: 0px 4px 25px rgba(232, 170, 49, 0.63);
+        }
+    }
+
+    &_black {
+        background-color: #000;
+        box-shadow: none;
+        padding: 10px 30px;
+        
+        @media (any-hover: hover) {
+            &:hover {
+                box-shadow: 0px 4px 25px rgba(31, 30, 28, 0.63);
+            }
+        }
+    }
+}
+
+// Обмежуючий контейнер
+// (і) Стилі будут застосовіватись до всих класів маючим *__сontainer. Наприклад header__сontainer... Спінет (html): cnt
+
+@if ($responsiveType==1) {
+    [class*="__сontainer"] {
+        @if ($maxWidthContainer>0) {
+            max-width: rem($maxWidthContainer);
+            box-sizing: content-box;
+            margin: 0 auto;
+        }
+
+        @if ($containerPadding>0) {
+            padding: 0 rem(math.div($containerPadding, 2));
+        }
+    }
+} @else {
+
+    // По брейк-поінтам
+    [class*="__container"] {
+        margin: 0 auto;
+
+        @if ($maxWidthContainer>0) {
+            max-width: rem($maxWidthContainer);
+            box-sizing: content-box;
+        }
+
+        @else {
+            @if ($containerPadding>0) {
+                padding: 0 rem(math.div($containerPadding, 2));
+            }
+        }
+
+        @media (max-width: $pc) {
+            max-width: rem(970);
+        }
+
+        @media (max-width: $tablet) {
+            max-width: rem(750);
+        }
+
+        @media (max-width: $mobile) {
+            max-width: none;
+
+            @if ($containerPadding>0 and $maxWidthContainer>0) {
+                padding: 0 rem(math.div($containerPadding, 2));
+            }
+        }
+    }
+}
+
+// ================ title ========================
+.title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: math.div(30, 24);
+
+    &:not(:last-child) {
+        margin-bottom: 25px;
+    }
+}
+
+// ================ breadcrumbs ========================
+.breadcrumbs {
+    white-space: nowrap;
+    overflow: auto;
+    height: 22px;
+
+    &__list {
+        display: flex;
+    }
+
+    &__link {
+        opacity: 0.5;
+        display: flex;
+        align-items: center;
+
+        &::after {
+            content: '\e900';
+            @extend %ic;
+            transform: rotate(-90deg);
+            font-size: 6px;
+            margin: 0px 6px;
+        }
+    }
+
+    &__current {
+        color: $mainColorOrang;
+    }
+}
+
+// -----------------checkbox----------------------------
+.checkbox {
+    position: relative;
+    &:not(:last-child) {
+        margin-bottom: 5px;
+    }
+
+    &__input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+
+        &:checked + .checkbox__label::after {
+            transform: scale(1);
+        }
+
+        &:checked + .checkbox__label::before {
+            border: 1px solid $mainColorOrang;
+        }
+    }
+
+    &__label {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        gap: 10px;
+        
+        &::before {
+            content: '';
+            align-self: flex-start;
+            flex: 0 0 20px;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #cbcbcb;
+            border-radius: 2px;
+            transition: border 0.3s ease 0s;
+        }
+        &::after {
+            content: '';
+            transform: scale(0);
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: 2px;
+            left: 2px;
+            background-color: $mainColorOrang;
+            transition: transform 0.3s ease 0s;
+        }
+    }
+
+    &__text {
+        small {
+            color: $mainColorOrang;
+        }
+    }
+}
+
+// -----------------------------Точний рейтинг (JS):------------------------------
+.products-card__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &:not(:last-child) {
+        margin-bottom: 25px;
+    }
+
+    .rating {
+        display: flex;
+        align-items: flex-end;
+        font-size: 30px;
+        line-height: 0.75;
+        transition: opacity 0.3s ease 0s;
+
+        .rating__body {
+            position: relative;
+            letter-spacing: 5px;
+
+            &::before {
+                content: '★★★★★';
+                display: block;
+            }
+
+            .rating__active {
+                position: absolute;
+                width: 0%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                overflow: hidden;
+
+                &::before {
+                    content: '★★★★★';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    color: #ffd300;
+                }
+            }
+
+            .rating__items {
+                display: flex;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+
+                .rating__item {
+                    flex: 0 0 20%;
+                    height: 100%;
+                    opacity: 0;
+                }
+            }
+
+        }
+
+        .rating__value {
+            font-size: 60%;
+            line-height: 1;
+            color: #ababab;
+        }
+
+    }
+
+    .rating.rating_sending {
+        opacity: 0.2;
+    }
+
+    .rating.rating_set .rating__active,
+    .rating.rating_set .rating__item {
+        cursor: pointer;
+    }
+
+}

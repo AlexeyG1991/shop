@@ -1,0 +1,313 @@
+.page {
+
+   &_inner {
+      padding-top: 30px;
+   }
+
+   &__header {
+      margin-bottom: 30px;
+   }
+}
+.catalog {
+   @include adaptiveValuePB(120, 40);
+   &__body {
+      display: grid;
+      align-items: start;
+      gap: 30px;
+      @media (min-width: $tablet) {
+         grid-template-columns: 375px 1fr;
+      }
+
+      .filter-catalog {
+         background: #fefefe;
+         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+      
+            &__title {
+               width: 100%;
+               background-color: $mainDarkColor;
+               color: #fff;
+               font-weight: bold;
+               font-size: 20px;
+               line-height: 24px;
+               padding: 20px 30px;
+               position: relative;
+
+               &::before {
+                  display: none;
+               }
+            }
+      
+            &__items {
+               @media (max-width: $tablet) {
+                  display: none;
+                  &._active {
+                     display: block;
+                  }
+               }
+            }
+      }
+
+      .price-filter {
+         padding: 30px;
+   
+         &__title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row-reverse;
+            width: 100%;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 24px;
+
+            &::before {
+               color: $mainColorOrang;
+               font-size: 8px;
+               transform: rotate(-180deg);
+               transition: transform 0.3s ease 0s;
+            }
+            &._active {
+               &::before {
+                  transform: rotate(0deg);
+               }
+            }
+         }
+
+         &__body {
+            padding: 30px 0px 0px 0px;
+         }
+
+         &__inputs {
+            display: flex;
+            border: 1px solid #cbcbcb;
+            border-radius: 3px;
+            overflow: hidden;
+
+            &:not(:last-child) {
+               margin-bottom: 55px;
+            }
+         }
+
+         &__input {
+            width: 50%;
+            height: 42px;
+            padding: 0 15px;
+            text-align: center;
+
+            &:not(:last-child) {
+               border-right: 1px solid #cbcbcb;
+            }
+         }
+      }
+
+      .item-filter-catalog {
+         &__title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row-reverse;
+            width: 100%;
+            padding: 15px 30px;
+            background-color: $mainDarkColor;
+            color: #fff;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 24px;
+
+            &::before {
+               color: $mainColorOrang;
+               font-size: 8px;
+               transform: rotate(-180deg);
+               transition: transform 0.3s ease 0s;
+            }
+            &._active {
+               &::before {
+                  transform: rotate(0deg);
+               }
+            }
+         }
+   
+         &__body {
+            padding: 30px;
+         }
+         
+         &__checkbox {
+            &:not(:last-child) {
+               margin-bottom: 20px;
+            }
+         }
+      }
+   }
+
+   &__control {
+      display: flex;
+      justify-content: flex-end;
+
+      &:not(:last-child) {
+         margin-bottom: 20px;
+      }
+
+      .select {
+         position: relative;
+         z-index: 2;
+         border-radius: 3px;
+         display: block; 
+         cursor: pointer;
+         font-size: 16px; 
+         font-weight: 600; 
+         padding: 10px 20px; 
+         border: 1px solid #aaa;
+         appearance: none;
+         background-color: #fff; 
+         background-image: linear-gradient(to bottom, #ffffff 20%,#e5e5e5 100%); 
+         transition: all 0.3s ease 0s;
+
+         &:hover { 
+            box-shadow: 0 1px 10px 5px rgba(0,0,0,.07); 
+         }
+         &.is-active .select__body {
+            display: block;
+         }
+         &.is-active .select__header {
+            &::before {
+               transform: rotate(180deg);
+            }
+         }
+         &__header {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 200px;
+            padding: 5px 30px 5px 0;
+            cursor: pointer;
+
+            &::before {
+               position: absolute;
+               font-size: 8px;
+               opacity: 0.5;
+               @extend %ic;
+               content: "\e900";
+               z-index: 2;
+               top: 12px;
+               right: 0px;
+               transition: all 0.3s ease 0s;
+            }
+         }
+         &__body {
+            display: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            border: 1px solid #aaa;
+            background-image: linear-gradient(to bottom, #ffffff 30%,#e5e5e5 100%); 
+            border-radius: 3px;
+         }
+         &__item {
+            cursor: pointer;
+            padding: 5px 20px;
+            opacity: 0.6;
+
+            &:hover {
+               background-color: #ccc;
+               opacity: 1;
+            }
+         }
+      }
+   }
+
+   &__products {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      &:not(:last-child) {
+         @include adaptiveValueMB(60, 30);
+      }
+   }
+
+	&__footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+
+      @media (max-width: $tablet) {
+         flex-direction: column;
+      }
+	}
+
+	&__more {
+      color: $mainColorOrang !important;
+      border: 2px solid $mainColorOrang;
+      border-radius: 3px;
+      display: inline-block;
+      text-align: center;
+      font-weight: 600;
+      font-size: 20px;
+      padding: 10px 50px;
+      line-height: math.div(32, 20);
+      transition: box-shadow 0.3s ease 0s;
+      @media (any-hover: hover) {
+         &:hover {
+            box-shadow: 0px 4px 25px rgba(232, 170, 49, 0.63);
+         }
+      }
+	}
+
+   .pagging {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      @include adaptiveValueG(30, 15);
+
+      @media (max-width: $tablet) {
+         justify-content: center;
+      }
+
+		&__arrow {
+         color: $mainColorOrang;
+
+         &::before {
+            font-size: 10px;
+         }
+         &:disabled {
+            color: rgba(0, 0, 0, 0.12);
+         }
+
+			&_left {
+            transform: rotate(90deg);
+			}
+
+			&_right {
+            transform: rotate(-90deg);
+			}
+		}
+
+		&__list {
+         display: flex;
+         align-items: center;
+         gap: 13px;
+		}
+
+		&__link {
+         width: 34px;
+         height: 34px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         border-radius: 50%;
+         transition: all 0.3s ease 0s;
+
+         &._active {
+            background-color: $mainColorOrang;
+            color: #fff;
+         }
+         @media (any-hover: hover) {
+            &:hover {
+               background-color: rgb(241, 220, 149);
+               color: #fff;
+            }
+         }
+
+		}
+   }
+}

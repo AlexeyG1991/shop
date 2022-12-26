@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html', {
+"title":"Каталог"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/header.html', {})
+        <main class="page page_inner">
+            <div class="page__header">
+                <div class="__container">
+                    <h1 class="page__title title">Саджанці винограду</h1>
+                    <nav class="breadcrumbs">
+                        <ul class="breadcrumbs__list">
+                            <li class="breadcrumbs__item">
+                                <a href="index.html" class="breadcrumbs__link">Головна</a>
+                            </li>
+                            <li class="breadcrumbs__item">
+                                <span class="breadcrumbs__current">Саджанці винограду</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="catalog">
+                <div class="__container">
+                    <div class="catalog__body">
+                        <div class="catalog__filter filter-catalog">
+                            <button type="button" class="filter-catalog__title _icon-spoller-arrow">Фільтр
+                                товарів</button>
+                            <div data-spollers class="filter-catalog__items">
+                                <div class="filter-catalog__price price-filter">
+                                    <button type="button" data-spoller
+                                        class="price-filter__title _icon-spoller-arrow">Ціна</button>
+                                    <div data-range class="price-filter__body">
+                                        <div class="price-filter__inputs">
+                                            <input data-range-from="0" autocomplete="off" type="text" value="500"
+                                                name="form[]" class="price-filter__input">
+                                            <input data-range-to="5000" autocomplete="off" type="text" value="1000"
+                                                name="form[]" class="price-filter__input">
+                                        </div>
+                                        <div data-range-item class="price-filter__range"></div>
+                                    </div>
+                                </div>
+                                <div class="filter-catalog__item item-filter-catalog">
+                                    <button type="button" data-spoller
+                                        class="item-filter-catalog__title _icon-spoller-arrow">Категорія</button>
+                                    <div class="item-filter-catalog__body">
+                                        <div class="item-filter-catalog__checkbox checkbox">
+                                            <input type="checkbox" name="form[]" id="c_1" data-error="Помилка"
+                                                class="checkbox__input" value="1">
+                                            <label for="c_1" class="checkbox__label"><span
+                                                    class="checkbox__text">Столові
+                                                    <small>(250)</small></span></label>
+                                        </div>
+                                        <div class="item-filter-catalog__checkbox checkbox">
+                                            <input type="checkbox" name="form[]" id="c_2" data-error="Помилка"
+                                                class="checkbox__input" value="1">
+                                            <label for="c_2" class="checkbox__label"><span
+                                                    class="checkbox__text">Технічні (винні)
+                                                    <small>(130)</small></span></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filter-catalog__item item-filter-catalog">
+                                    <button type="button" data-spoller
+                                        class="item-filter-catalog__title _icon-spoller-arrow">Колір</button>
+                                    <div class="item-filter-catalog__body">
+                                        <div class="item-filter-catalog__checkbox checkbox">
+                                            <input type="checkbox" name="form[]" id="c_3" data-error="Помилка"
+                                                class="checkbox__input" value="1">
+                                            <label for="c_3" class="checkbox__label"><span class="checkbox__text">Білий
+                                                    <small>(130)</small></span></label>
+                                        </div>
+                                        <div class="item-filter-catalog__checkbox checkbox">
+                                            <input type="checkbox" name="form[]" id="c_4" data-error="Помилка"
+                                                class="checkbox__input" value="1">
+                                            <label for="c_4" class="checkbox__label"><span
+                                                    class="checkbox__text">Рожевий
+                                                    <small>(140)</small></span></label>
+                                        </div>
+                                        <div class="item-filter-catalog__checkbox checkbox">
+                                            <input type="checkbox" name="form[]" id="c_5" data-error="Помилка"
+                                                class="checkbox__input" value="1">
+                                            <label for="c_5" class="checkbox__label"><span class="checkbox__text">Синій
+                                                    <small>(110)</small></span></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filter-catalog__item item-filter-catalog">
+                                    <button type="button" data-spoller
+                                        class="item-filter-catalog__title _icon-spoller-arrow">Морозостійкість</button>
+                                    <div class="item-filter-catalog__body">
+                                        <div class="item-filter-catalog__checkbox checkbox">
+                                            <input type="checkbox" name="form[]" id="c_6" data-error="Помилка"
+                                                class="checkbox__input" value="1">
+                                            <label for="c_6" class="checkbox__label"><span class="checkbox__text">Низька
+                                                    <small>(250)</small></span></label>
+                                        </div>
+                                        <div class="item-filter-catalog__checkbox checkbox">
+                                            <input type="checkbox" name="form[]" id="c_7" data-error="Помилка"
+                                                class="checkbox__input" value="1">
+                                            <label for="c_7" class="checkbox__label"><span class="checkbox__text">Висока
+                                                    <small>(130)</small></span></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalog__content">
+                            <div class="catalog__control">
+                                <div class="select">
+                                    <div class="select__header">
+                                        <span class="select__current">Найпопулярніші</span>
+                                    </div>
+                                    <div class="select__body">
+                                        <div data-value="1" class="select__item">Новинки</div>
+                                        <div data-value="2" class="select__item">Спочатку дешевші</div>
+                                        <div data-value="3" class="select__item">Спочатку дорожчі</div>
+                                        <div data-value="4" class="select__item">Найпопулярніші</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="catalog__products">
+                                <article class="products-card">
+                                    <div class="products-card__sale">-50%</div>
+                                    <a href="product.html" class="products-card__image">
+                                        <span class="products-card__item-image-ibg">
+                                            <img src="@img/product-card/img-01.png" alt="image">
+                                        </span>
+                                    </a>
+                                    <div class="products-card__body">
+                                        <h4 class="products-card__title">
+                                            <a href="product.html" class="products-card__link-title">Аватар</a>
+                                        </h4>
+                                        <div class="products-card__info info-products-card">
+                                            <div class="products-card__size">Кишмиш</div>
+                                            <div class="products-card__materials">Столовий</div>
+                                        </div>
+                                        <div class="products-card__rating">
+                                            <div class="rating rating_set">
+                                                <div class="rating__body">
+                                                    <div class="rating__active"></div>
+                                                    <div class="rating__items">
+                                                        <input type="radio" class="rating__item" value="1"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="2"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="3"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="4"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="5"
+                                                            name="rating">
+                                                    </div>
+                                                </div>
+                                                <div class="rating__value">4.6</div>
+                                            </div>
+                                            <div class="rating__info">12 відгуків</div>
+                                        </div>
+                                        <div class="products-card__footer">
+                                            <div class="products-card__price">500 грн</div>
+                                            <a href="" class="products-card__compare _icon-compare"></a>
+                                            <a href="" class="products-card__favorite _icon-favorite"></a>
+                                        </div>
+                                        <button class="products-card__cart button"><span class="_icon-cart">У
+                                                кошик</span></button>
+                                    </div>
+                                </article>
+                                <article class="products-card">
+                                    <a href="product.html" class="products-card__image">
+                                        <span class="products-card__item-image-ibg">
+                                            <img src="@img/product-card/img-02.png" alt="image">
+                                        </span>
+                                    </a>
+                                    <div class="products-card__body">
+                                        <h4 class="products-card__title">
+                                            <a href="product.html" class="products-card__link-title">Слава Україні</a>
+                                        </h4>
+                                        <div class="products-card__info info-products-card">
+                                            <div class="products-card__size">З зернятком</div>
+                                            <div class="products-card__materials">Столовий</div>
+                                        </div>
+                                        <div class="products-card__rating">
+                                            <div class="rating rating_set">
+                                                <div class="rating__body">
+                                                    <div class="rating__active"></div>
+                                                    <div class="rating__items">
+                                                        <input type="radio" class="rating__item" value="1"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="2"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="3"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="4"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="5"
+                                                            name="rating">
+                                                    </div>
+                                                </div>
+                                                <div class="rating__value">4</div>
+                                            </div>
+                                            <div class="rating__info">10 відгуків</div>
+                                        </div>
+                                        <div class="products-card__footer">
+                                            <div class="products-card__price">150 грн</div>
+                                            <a href="" class="products-card__compare _icon-compare"></a>
+                                            <a href="" class="products-card__favorite _icon-favorite"></a>
+                                        </div>
+                                        <button class="products-card__cart button"><span class="_icon-cart">У
+                                                кошик</span></button>
+                                    </div>
+                                </article>
+                                <article class="products-card">
+                                    <a href="product.html" class="products-card__image">
+                                        <span class="products-card__item-image-ibg">
+                                            <img src="@img/product-card/img-03.png" alt="image">
+                                        </span>
+                                    </a>
+                                    <div class="products-card__body">
+                                        <h4 class="products-card__title">
+                                            <a href="product.html" class="products-card__link-title">Хеллоуін</a>
+                                        </h4>
+                                        <div class="products-card__info info-products-card">
+                                            <div class="products-card__size">Кишмиш</div>
+                                            <div class="products-card__materials">Столовий</div>
+                                        </div>
+                                        <div class="products-card__rating">
+                                            <div class="rating rating_set">
+                                                <div class="rating__body">
+                                                    <div class="rating__active"></div>
+                                                    <div class="rating__items">
+                                                        <input type="radio" class="rating__item" value="1"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="2"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="3"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="4"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="5"
+                                                            name="rating">
+                                                    </div>
+                                                </div>
+                                                <div class="rating__value">4.6</div>
+                                            </div>
+                                            <div class="rating__info">9 відгуків</div>
+                                        </div>
+                                        <div class="products-card__footer">
+                                            <div class="products-card__price">450 грн</div>
+                                            <a href="" class="products-card__compare _icon-compare"></a>
+                                            <a href="" class="products-card__favorite _icon-favorite"></a>
+                                        </div>
+                                        <button class="products-card__cart button"><span class="_icon-cart">У
+                                                кошик</span></button>
+                                    </div>
+                                </article>
+                                <article class="products-card">
+                                    <a href="product.html" class="products-card__image">
+                                        <span class="products-card__item-image-ibg">
+                                            <img src="@img/product-card/img-08.png" alt="image">
+                                        </span>
+                                    </a>
+                                    <div class="products-card__body">
+                                        <h4 class="products-card__title">
+                                            <a href="product.html" class="products-card__link-title">Шевченко</a>
+                                        </h4>
+                                        <div class="products-card__info info-products-card">
+                                            <div class="products-card__size">З зернятком</div>
+                                            <div class="products-card__materials">Столовий</div>
+                                        </div>
+                                        <div class="products-card__rating">
+                                            <div class="rating rating_set">
+                                                <div class="rating__body">
+                                                    <div class="rating__active"></div>
+                                                    <div class="rating__items">
+                                                        <input type="radio" class="rating__item" value="1"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="2"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="3"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="4"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="5"
+                                                            name="rating">
+                                                    </div>
+                                                </div>
+                                                <div class="rating__value">3.6</div>
+                                            </div>
+                                            <div class="rating__info">12 відгуків</div>
+                                        </div>
+                                        <div class="products-card__footer">
+                                            <div class="products-card__price">100 грн</div>
+                                            <a href="" class="products-card__compare _icon-compare"></a>
+                                            <a href="" class="products-card__favorite _icon-favorite"></a>
+                                        </div>
+                                        <button class="products-card__cart button"><span class="_icon-cart">У
+                                                кошик</span></button>
+                                    </div>
+                                </article>
+                                <article class="products-card">
+                                    <a href="product.html" class="products-card__image">
+                                        <span class="products-card__item-image-ibg">
+                                            <img src="@img/product-card/img-09.png" alt="image">
+                                        </span>
+                                    </a>
+                                    <div class="products-card__body">
+                                        <h4 class="products-card__title">
+                                            <a href="product.html" class="products-card__link-title">Аватар</a>
+                                        </h4>
+                                        <div class="products-card__info info-products-card">
+                                            <div class="products-card__size">Кишмиш</div>
+                                            <div class="products-card__materials">Столовий</div>
+                                        </div>
+                                        <div class="products-card__rating">
+                                            <div class="rating rating_set">
+                                                <div class="rating__body">
+                                                    <div class="rating__active"></div>
+                                                    <div class="rating__items">
+                                                        <input type="radio" class="rating__item" value="1"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="2"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="3"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="4"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="5"
+                                                            name="rating">
+                                                    </div>
+                                                </div>
+                                                <div class="rating__value">4.6</div>
+                                            </div>
+                                            <div class="rating__info">12 відгуків</div>
+                                        </div>
+                                        <div class="products-card__footer">
+                                            <div class="products-card__price">500 грн</div>
+                                            <a href="" class="products-card__compare _icon-compare"></a>
+                                            <a href="" class="products-card__favorite _icon-favorite"></a>
+                                        </div>
+                                        <button class="products-card__cart button"><span class="_icon-cart">У
+                                                кошик</span></button>
+                                    </div>
+                                </article>
+                                <article class="products-card">
+                                    <a href="product.html" class="products-card__image">
+                                        <span class="products-card__item-image-ibg">
+                                            <img src="@img/product-card/img-010.png" alt="image">
+                                        </span>
+                                    </a>
+                                    <div class="products-card__body">
+                                        <h4 class="products-card__title">
+                                            <a href="product.html" class="products-card__link-title">Хеллоуін</a>
+                                        </h4>
+                                        <div class="products-card__info info-products-card">
+                                            <div class="products-card__size">Кишмиш</div>
+                                            <div class="products-card__materials">Столовий</div>
+                                        </div>
+                                        <div class="products-card__rating">
+                                            <div class="rating rating_set">
+                                                <div class="rating__body">
+                                                    <div class="rating__active"></div>
+                                                    <div class="rating__items">
+                                                        <input type="radio" class="rating__item" value="1"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="2"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="3"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="4"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="5"
+                                                            name="rating">
+                                                    </div>
+                                                </div>
+                                                <div class="rating__value">4.6</div>
+                                            </div>
+                                            <div class="rating__info">9 відгуків</div>
+                                        </div>
+                                        <div class="products-card__footer">
+                                            <div class="products-card__price">450 грн</div>
+                                            <a href="" class="products-card__compare _icon-compare"></a>
+                                            <a href="" class="products-card__favorite _icon-favorite"></a>
+                                        </div>
+                                        <button class="products-card__cart button"><span class="_icon-cart">У
+                                                кошик</span></button>
+                                    </div>
+                                </article>
+                                <article class="products-card">
+                                    <a href="product.html" class="products-card__image">
+                                        <span class="products-card__item-image-ibg">
+                                            <img src="@img/product-card/img-011.png" alt="image">
+                                        </span>
+                                    </a>
+                                    <div class="products-card__body">
+                                        <h4 class="products-card__title">
+                                            <a href="product.html" class="products-card__link-title">Хеллоуін</a>
+                                        </h4>
+                                        <div class="products-card__info info-products-card">
+                                            <div class="products-card__size">Кишмиш</div>
+                                            <div class="products-card__materials">Столовий</div>
+                                        </div>
+                                        <div class="products-card__rating">
+                                            <div class="rating rating_set">
+                                                <div class="rating__body">
+                                                    <div class="rating__active"></div>
+                                                    <div class="rating__items">
+                                                        <input type="radio" class="rating__item" value="1"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="2"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="3"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="4"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="5"
+                                                            name="rating">
+                                                    </div>
+                                                </div>
+                                                <div class="rating__value">4.6</div>
+                                            </div>
+                                            <div class="rating__info">9 відгуків</div>
+                                        </div>
+                                        <div class="products-card__footer">
+                                            <div class="products-card__price">450 грн</div>
+                                            <a href="" class="products-card__compare _icon-compare"></a>
+                                            <a href="" class="products-card__favorite _icon-favorite"></a>
+                                        </div>
+                                        <button class="products-card__cart button"><span class="_icon-cart">У
+                                                кошик</span></button>
+                                    </div>
+                                </article>
+                                <article class="products-card">
+                                    <a href="product.html" class="products-card__image">
+                                        <span class="products-card__item-image-ibg">
+                                            <img src="@img/product-card/img-06.png" alt="image">
+                                        </span>
+                                    </a>
+                                    <div class="products-card__body">
+                                        <h4 class="products-card__title">
+                                            <a href="product.html" class="products-card__link-title">Слава Україні</a>
+                                        </h4>
+                                        <div class="products-card__info info-products-card">
+                                            <div class="products-card__size">Кишмиш</div>
+                                            <div class="products-card__materials">Столовий</div>
+                                        </div>
+                                        <div class="products-card__rating">
+                                            <div class="rating rating_set">
+                                                <div class="rating__body">
+                                                    <div class="rating__active"></div>
+                                                    <div class="rating__items">
+                                                        <input type="radio" class="rating__item" value="1"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="2"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="3"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="4"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="5"
+                                                            name="rating">
+                                                    </div>
+                                                </div>
+                                                <div class="rating__value">3.6</div>
+                                            </div>
+                                            <div class="rating__info">9 відгуків</div>
+                                        </div>
+                                        <div class="products-card__footer">
+                                            <div class="products-card__price">150 грн</div>
+                                            <a href="" class="products-card__compare _icon-compare"></a>
+                                            <a href="" class="products-card__favorite _icon-favorite"></a>
+                                        </div>
+                                        <button class="products-card__cart button"><span class="_icon-cart">У
+                                                кошик</span></button>
+                                    </div>
+                                </article>
+                                <article class="products-card">
+                                    <a href="product.html" class="products-card__image">
+                                        <span class="products-card__item-image-ibg">
+                                            <img src="@img/product-card/img-07.png" alt="image">
+                                        </span>
+                                    </a>
+                                    <div class="products-card__body">
+                                        <h4 class="products-card__title">
+                                            <a href="product.html" class="products-card__link-title">Арочний</a>
+                                        </h4>
+                                        <div class="products-card__info info-products-card">
+                                            <div class="products-card__size">Кишмиш</div>
+                                            <div class="products-card__materials">Столовий</div>
+                                        </div>
+                                        <div class="products-card__rating">
+                                            <div class="rating rating_set">
+                                                <div class="rating__body">
+                                                    <div class="rating__active"></div>
+                                                    <div class="rating__items">
+                                                        <input type="radio" class="rating__item" value="1"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="2"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="3"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="4"
+                                                            name="rating">
+                                                        <input type="radio" class="rating__item" value="5"
+                                                            name="rating">
+                                                    </div>
+                                                </div>
+                                                <div class="rating__value">2.6</div>
+                                            </div>
+                                            <div class="rating__info">9 відгуків</div>
+                                        </div>
+                                        <div class="products-card__footer">
+                                            <div class="products-card__price">100 грн</div>
+                                            <a href="" class="products-card__compare _icon-compare"></a>
+                                            <a href="" class="products-card__favorite _icon-favorite"></a>
+                                        </div>
+                                        <button class="products-card__cart button"><span class="_icon-cart">У
+                                                кошик</span></button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="catalog__footer">
+                                <a href="" class="catalog__more">Показати більше</a>
+                                <div class="catalog__pagging pagging">
+                                    <button disabled type="button"
+                                        class="pagging__arrow pagging__arrow_left _icon-arrow-bottom"></button>
+                                    <ul class="pagging__list">
+                                        <li class="pagging__item">
+                                            <a href="" class="pagging__link _active">1</a>
+                                        </li>
+                                        <li class="pagging__item">
+                                            <a href="" class="pagging__link">2</a>
+                                        </li>
+                                        <li class="pagging__item">
+                                            <a href="" class="pagging__link">3</a>
+                                        </li>
+                                        <li class="pagging__item">
+                                            <a href="" class="pagging__link">...</a>
+                                        </li>
+                                        <li class="pagging__item">
+                                            <a href="" class="pagging__link">15</a>
+                                        </li>
+                                    </ul>
+                                    <button type="button"
+                                        class="pagging__arrow pagging__arrow_right _icon-arrow-bottom"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        @@include('html/footer.html', {})
+    </div>
+
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>

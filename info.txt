@@ -1,0 +1,37 @@
+npm init
+(click Enter)
+npm i gulp-cli -g (глобальна)
+npm i gulp -D (локально)
+gulp (запуск)
+(зупинити задачу = Ctrl C)
+npm i -D gulp-file-include (плагін на збір)
+npm i -D gulp-replace (плагін для редагування)
+npm i -D gulp-webp-html-nosvg (стискає якість зображень)
+npm i -D gulp-version-number (обновлює кеш, для замовника)
+npm i -D gulp-plumber gulp-notify"; (бробка помилок та Повідомлення (підказок))
+npm i -D gulp-pug
+npm i -D browser-sync (локальний сервер)
+npm i -D gulpe-sass sass 
+npm i -D gulp-rename
+npm i -D gulp-clean-css (сжимання css файла)
+npm i -D gulp-webpcss (вибір webp зображень)
+npm i -D gulp-autoprefixer (добавлення вендерних префіксів)
+npm i -D gulp-group-css-media-queries (групування медіа запитів)
+npm i -D webp-converter@2.2.3
+npm i -D webpack webpack-stream
+npm i -D swiper
+npm i -D gulp-webp gulp-imagemin
+npm i -D gulp-newer
+npm i -D gulp-fonter gulp-ttf2woff2
+npm i -D gulp-svg-sprite
+npm i -D gulp-zip
+------------------------------------------------------
+npm run dev (режим розробника)
+npm run build (продакшен, зжатий код, зображення...)
+npm run zip (zip папка з результатом роботи)
+npm run svgSprive
+npm run deploy (не розібрався)
+------------------------------------------------------
+npm i (установка всіх пакетів)
+------------------------------------------------------
+https://www.youtube.com/watch?v=jU88mLuLWlk
